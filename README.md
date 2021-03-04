@@ -29,7 +29,7 @@ First we see what's new in yolov4
  
  
 ## ABOUT YOLOV4
-**YOLOV4 [you only look at once version 4]**
+***YOLOV4 [you only look at once version 4]***
 
 Architecture : input ->Backbone -> Neck -> Dense prediction -> sparse prediction
 
@@ -46,7 +46,7 @@ Heads:
        Sparse Prediction (two-stage):◦ Faster R-CNN , R-FCN, Mask RCNN (anchor based)◦ RepPoints(anchor free)
 
 
-**Mainly two types of models in object detection :**
+***Mainly two types of models in object detection :***
 
     One stage or two stage models. A one stage model is capable of detecting objects without the need for a preliminary step. On the contrary, a two stage detector uses a preliminary stage where regions of importance are detected and then classified to see if an object has been detected in these areas. The advantage of a one stage detector is the speed it is able to make predictions quickly allowing a real time use.
   
