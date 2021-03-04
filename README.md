@@ -48,22 +48,24 @@ Heads:
 
 ***Mainly two types of models in object detection :***
 
-    One stage or two stage models. A one stage model is capable of detecting objects without the need for a preliminary step. On the contrary, a two stage detector uses a preliminary stage where regions of importance are detected and then classified to see if an object has been detected in these areas. The advantage of a one stage detector is the speed it is able to make predictions quickly allowing a real time use.
+  One stage or two stage models. A one stage model is capable of detecting objects without the need for a preliminary step. On the contrary, a two stage detector uses a preliminary stage where regions of importance are detected and then classified to see if an object has been detected in these areas. The advantage of a one stage detector is the speed it is able to make predictions quickly allowing a real time use.
   
    A modern detector is usually composed of two parts,a backbone which is pre-trained on ImageNet and a head which is used to predict classes and bounding boxes of objects. For those detectors running on GPU platform, their backbone could be VGG , ResNet , ResNeXt,or DenseNet. For those detectors running on CPU platform, their backbone could be SqueezeNet, MobileNet, or ShuffleNet. As to the head part,it is usually categorized into two kinds, i.e., one-stage object detector and two-stage object detector. The most representative two-stage object detector is the R-CNN series,including fast R-CNN , faster R-CNN , R-FCN,and Libra R-CNN. It is also possible to make a twostage object detector an anchor-free object detector, such as RepPoints. As for one-stage object detector, the most representative models are YOLO , SSD ,and RetinaNet. In recent years,anchor-free one-stage object detectors are developed. The detectors of this sort are CenterNet, CornerNet, FCOS
 
 ***Why YoloV4 ?***
 
-    YoloV4 is an important improvement of YoloV3, the implementation of a new architecture in the Backbone and the modifications in the Neck have improved the mAP(mean Average Precision) by 10% and the number of FPS(Frame per Second) by 12%. In addition, it has become easier to train this neural network on a single GPU.
+  YoloV4 is an important improvement of YoloV3, the implementation of a new architecture in the Backbone and the modifications in the Neck have improved the mAP(mean Average Precision) by 10% and the number of FPS(Frame per Second) by 12%. In addition, it has become easier to train this neural network on a single GPU.
 
 ***Backbone***
 
-    Deep neural network composed mainly of convolution layers. The main objective of the backbone is to extract the essential features, the selection of the backbone is a key step it will improve the performance of object detection. Often pre-trained neural networks are used to train the backbone.
+  Deep neural network composed mainly of convolution layers. The main objective of the backbone is to extract the essential features, the selection of the backbone is a key step it will improve the performance of object detection. Often pre-trained neural networks are used to train the backbone.
 The YoloV4 backbone architecture is composed of three parts:
 
-***Bag of freebies
-Bag of specials
-CSPDarknet53***
+***Bag of freebies***
+
+***Bag of specials***
+
+***CSPDarknet53***
 
 ***Bag of freebies:***
 
@@ -121,10 +123,6 @@ Each stage layer of a DenseNet contains a dense block and a transition layer, an
  x1=w1 x x0
  
  x2= w2 x [x0,x1]
- 
- .
- 
- .
  
  .
  
@@ -223,7 +221,7 @@ In DropBlock, features in a block (i.e. a contiguous region of a feature map), a
 
 ***Self-Adversarial Training (SAT)***
 
-     Self-Adversarial Training (SAT) represents a new data augmentation technique that operates in 2 forward backward stages. In the 1st stage the neural network alters the original image instead of the network weights. In this way the neural network executes an adversarial attack on itself, altering the original image to create the deception that there is no desired object on the image. In the 2nd stage, the neural network is trained to detect an object on this modified image in the normal way with original label before add noise to the image.
+  Self-Adversarial Training (SAT) represents a new data augmentation technique that operates in 2 forward backward stages. In the 1st stage the neural network alters the original image instead of the network weights. In this way the neural network executes an adversarial attack on itself, altering the original image to create the deception that there is no desired object on the image. In the 2nd stage, the neural network is trained to detect an object on this modified image in the normal way with original label before add noise to the image.
 
 ***Eliminate grid sensitivity***
 
