@@ -229,7 +229,8 @@ In DropBlock, features in a block (i.e. a contiguous region of a feature map), a
 
 Using multiple anchors for a single ground truth
 
-      We predict several boxes, because it is difficult for a convolution network to predict directly a set of boxes associated with objects of different ratio, that’s why we use anchors that divide the image space according to different strategies.
+  We predict several boxes, because it is difficult for a convolution network to predict directly a set of boxes associated with objects of different ratio, that’s why we use anchors that divide the image space according to different strategies.
+  
 From the features map created by the convolution layers, we create many anchor boxes of different ratios in order to be able to represent objects of any size, we then decide thanks to the IOU to assign some boxes to an object or a background according to the threshold below.
 IoU (truth, anchor) > IoU threshold (formula)
 
